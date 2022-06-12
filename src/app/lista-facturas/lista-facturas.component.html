@@ -1,0 +1,20 @@
+
+<h2>Historico de facturas:</h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col"># factura</th>
+      <th scope="col">Cliente</th>
+      <th scope="col">fecha</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let factura of facturas">
+      <th scope="row">{{factura.numeroFactura}}</th>
+      <td >{{factura.cliente.nombre}} {{factura.cliente.apellido}}</td>
+      <td>{{factura.fecha}}</td>
+
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,39 @@
+<div class="card">
+  <div class="card-body text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-5">
+          <div class="form-floating">
+            <select class="form-select" id="usuario" aria-label="Floating label select example" [(ngModel)]="clienteSeleccionado">
+              <option selected>Seleccionar usuario</option>
+              <option *ngFor="let cliente of clientes" [value]="cliente.idCliente" >id={{cliente.idCliente}} nombre={{cliente.nombre}}</option>
+            </select>
+            <label for="floatingSelect">Elija un usuario</label>
+          </div>
+        </div>
+        <div class="col-5">
+          <div class="form-floating">
+            <select class="form-select" id="productos" aria-label="Floating label select example" [(ngModel)]="productoSeleccionado">
+              <option selected >Agregar producto a la compra</option>
+              <option *ngFor="let producto of productos" [value]="producto.idProducto">{{producto.nombre}}</option>
+            </select>
+            <label for="floatingSelect">Elija un producto</label>
+          </div>
+        </div>
+        <div class="col-2 form-floating" >
+          <input class="form-control" type="number" aria-label="Disabled input example" id="cantidad" [(ngModel)]="cantidadSeleccionada">
+          <label for="floatingSelect">Cantidad a comprar</label>
+        </div>
+      </div>
+    </div>
+    &nbsp;
+    <div class="text-center">
+      <button type="button" class="btn btn-secondary" (click)='addProducto()'>Agregar producto(s)</button>
+    </div>
+    &nbsp;
+    <div class="text-center">
+      <button type="button" class="btn btn-secondary" (click)='addFactura()' refresh>crear factura</button>
+    </div>
+  </div>
+
+</div>
